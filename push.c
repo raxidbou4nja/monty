@@ -42,6 +42,7 @@ void free_stack(stack_t *stk)
 	while (current != NULL)
 	{
 		stack_t *temp = current;
+
 		current = current->next;
 		free(temp);
 	}
