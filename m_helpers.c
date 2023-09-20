@@ -91,6 +91,8 @@ int execute_opcode(char *opcode, char *arg,
 		monty_div(stk, line_number);
 	else if (strcmp(opcode, "sub") == 0)
 		sub(stk, line_number);
+	else if (strcmp(opcode, "mul") == 0)
+		mul(stk, line_number);
 	else if (strcmp(opcode, "nop") == 0)
 		nop(stk, line_number);
 	else
