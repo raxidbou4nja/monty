@@ -48,3 +48,53 @@ int is_integer(const char *string)
 
 	return (1);
 }
+
+/**
+ * execute_opcode - execute the specified opcode with its argument.
+ *
+ * @opcode: opcode to execute.
+ * @arg: argument associated with the opcode (if any).
+ * @stk: pointer to the pointer to the stack.
+ * @file: target file
+ * @line: command line
+ * @line_number: line number in the Monty
+ * script where the opcode was encountered.
+ *
+ * Return: 1 or 0
+ */
+
+int execute_opcode(char *opcode, char *arg,
+	stack_t **stk, unsigned int line_number, FILE *file, char *line)
+{
+	if (strcmp(opcode, "push") == 0)
+	{
+		if (!arg || !is_integer(arg))
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			free(line);
+			fclose(file);
+			exit(EXIT_FAILURE);
+		}
+		push(stk, atoi(arg));
+	}
+	else if (strcmp(opcode, "pint") == 0)
+		pint(stk, line_number);
+	else if (strcmp(opcode, "pop") == 0)
+		pop(stk, line_number);
+	else if (strcmp(opcode, "swap") == 0)
+		swap(stk, line_number);
+	else if (strcmp(opcode, "pall") == 0)
+		pall(stk);
+	else if (strcmp(opcode, "add") == 0)
+		add(stk, line_number);
+	else if (strcmp(opcode, "div") == 0)
+		monty_div(stk, line_number);
+	else if (strcmp(opcode, "sub") == 0)
+		sub(stk, line_number);
+	else if (strcmp(opcode, "nop") == 0)
+		nop(stk, line_number);
+	else
+		return (0);
+
+	return (1);
+}
