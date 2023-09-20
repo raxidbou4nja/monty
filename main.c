@@ -6,6 +6,8 @@
  * @opcode: opcode to execute.
  * @arg: argument associated with the opcode (if any).
  * @stk: pointer to the pointer to the stack.
+ * @file: target file
+ * @line: command line
  * @line_number: line number in the Monty
  * script where the opcode was encountered.
  *
