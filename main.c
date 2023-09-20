@@ -6,18 +6,21 @@
  * @opcode: opcode to execute.
  * @arg: argument associated with the opcode (if any).
  * @stk: pointer to the pointer to the stack.
- * @line_number: line number in the Monty script where the opcode was encountered.
+ * @line_number: line number in the Monty
+ * script where the opcode was encountered.
  *
+ * Return: 1 or 0
  */
 
-int execute_opcode(char *opcode, char *arg, stack_t **stk, unsigned int line_number)
+int execute_opcode(char *opcode, char *arg,
+	stack_t **stk, unsigned int line_number)
 {
 	if (strcmp(opcode, "push") == 0)
 	{
 		if (!arg || !is_integer(arg))
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
-			return 0;
+			return (0);
 		}
 		push(stk, atoi(arg));
 	}
@@ -52,7 +55,7 @@ int execute_opcode(char *opcode, char *arg, stack_t **stk, unsigned int line_num
  */
 
 int main(int argc, char *argv[])
-{	
+{
 	FILE *file = fopen(argv[1], "r");
 	stack_t *stk = NULL;
 	char *line = NULL;

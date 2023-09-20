@@ -8,8 +8,8 @@
 
 void add(stack_t **stk, unsigned int ln_num)
 {
-    stack_t *top1;
-    stack_t *top2;
+	stack_t *top1;
+	stack_t *top2;
 
 	if (!stk || !(*stk) || !(*stk)->next)
 	{

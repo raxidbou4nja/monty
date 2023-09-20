@@ -9,8 +9,8 @@
 
 void swap(stack_t **stk, unsigned int ln_num)
 {
-    stack_t *top1;
-    stack_t *top2;
+	stack_t *top1;
+	stack_t *top2;
 	int temp;
 
 	if (!stk || !(*stk) || !(*stk)->next)
