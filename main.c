@@ -20,7 +20,7 @@ int execute_opcode(char *opcode, char *arg,
 		if (!arg || !is_integer(arg))
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
-			return (0);
+			return (1);
 		}
 		push(stk, atoi(arg));
 	}
