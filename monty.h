@@ -29,7 +29,8 @@ void pall(stack_t **stk);
 void pint(stack_t **stk, unsigned int ln_num);
 void pop(stack_t **stk, unsigned int ln_num);
 void swap(stack_t **stk, unsigned int ln_num);
-
+void add(stack_t **stk, unsigned int ln_num);
+void nop(stack_t **stk, unsigned int ln_num);
 
 int is_integer(const char *string);
 

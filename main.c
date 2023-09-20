@@ -70,6 +70,10 @@ int main(int argc, char *argv[])
 			{
 				pall(&stk);
 			}
+            else if (strcmp(opcode, "add") == 0)
+            {
+                add(&stk, line_number);
+            }
 			else
 			{
 				fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
