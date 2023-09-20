@@ -13,14 +13,16 @@
  */
 
 int execute_opcode(char *opcode, char *arg,
-	stack_t **stk, unsigned int line_number)
+	stack_t **stk, unsigned int line_number, FILE *file, char *line)
 {
 	if (strcmp(opcode, "push") == 0)
 	{
 		if (!arg || !is_integer(arg))
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
-			return (1);
+			free(line);
+			fclose(file);
+			exit(EXIT_FAILURE);
 		}
 		push(stk, atoi(arg));
 	}
@@ -83,7 +85,7 @@ int main(int argc, char *argv[])
 
 		if (opcode)
 		{
-			if (!execute_opcode(opcode, arg, &stk, line_number))
+			if (!execute_opcode(opcode, arg, &stk, line_number, file, line))
 			{
 				fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 				free(line);
