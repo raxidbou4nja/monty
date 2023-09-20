@@ -38,6 +38,7 @@ void push(stack_t **stk, int num)
 void free_stack(stack_t *stk)
 {
 	stack_t *current = stk;
+
 	while (current != NULL)
 	{
 		stack_t *temp = current;
