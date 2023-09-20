@@ -38,6 +38,8 @@ int execute_opcode(char *opcode, char *arg,
 		pall(stk);
 	else if (strcmp(opcode, "add") == 0)
 		add(stk, line_number);
+    else if (strcmp(opcode, "sub") == 0)
+        sub(stk, line_number);
 	else if (strcmp(opcode, "nop") == 0)
 		nop(stk, line_number);
 	else

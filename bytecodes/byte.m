@@ -1,5 +1,6 @@
 push 1
-push 2
-    push 3     
-pall
-fflush(stdout) 1;
+pint
+
+pint
+push 3
+pint
