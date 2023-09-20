@@ -1,22 +1,32 @@
 #include "monty.h"
 
-int is_integer(const char *str)
+/**
+ * is_integer - checks if a string represents a valid integer
+ *
+ * @string: input string to be checked
+ *
+ * Return:
+ * - 1 represents a valid integer
+ * - 0 doens't represent a valid integer
+ */
+
+int is_integer(const char *string)
 {
-    int i;
+	int idx;
 
-    if (!str)
-        return (0);
+	if (!string)
+		return (0);
 
-    i = 0;
+	idx = 0;
 
-    if (str[i] == '-')
-        i++;
+	if (string[idx] == '-')
+		idx++;
 
-    for (; str[i] != '\0'; i++)
-    {
-        if (!isdigit(str[i]))
-            return (0);
-    }
+	for (; string[idx] != '\0'; idx++)
+	{
+		if (!isdigit(string[idx]))
+			return (0);
+	}
 
-    return (1);
+	return (1);
 }

@@ -1,12 +1,19 @@
 #include "monty.h"
 
-void pint(stack_t **stack, unsigned int line_number)
-{
-    if (!stack || !(*stack))
-    {
-        fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-        exit(EXIT_FAILURE);
-    }
+/**
+ * pint - prints the value at the top of the stack
+ *
+ * @stk: pointer to the pointer to the stack
+ * @ln_num: line number in the Monty script where 'pint' was called
+ */
 
-    printf("%d\n", (*stack)->n);
+void pint(stack_t **stk, unsigned int ln_num)
+{
+	if (!stk || !(*stk))
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", ln_num);
+		exit(EXIT_FAILURE);
+	}
+
+	printf("%d\n", (*stk)->n);
 }
