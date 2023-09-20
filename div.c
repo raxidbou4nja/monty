@@ -3,8 +3,8 @@
 /**
  * monty_div - divides the second top element of the stack by the top element
  *
- * @stk: pointer to the pointer to the stack.
- * @ln_num: line number in the Monty script where 'div' was called.
+ * @stk: pointer to the pointer to the stack
+ * @ln_num: line number in the Monty script where 'div' was called
  *
  */
 

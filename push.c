@@ -29,3 +29,19 @@ void push(stack_t **stk, int num)
 
 	*stk = new_node;
 }
+
+/**
+ * free_stack - Frees the entire stack and all its nodes
+ * @stk: Pointer to the top of the stack
+ */
+
+void free_stack(stack_t *stk)
+{
+	stack_t *current = stk;
+	while (current != NULL)
+	{
+		stack_t *temp = current;
+		current = current->next;
+		free(temp);
+	}
+}

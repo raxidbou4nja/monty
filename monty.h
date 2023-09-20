@@ -33,6 +33,7 @@ void add(stack_t **stk, unsigned int ln_num);
 void nop(stack_t **stk, unsigned int ln_num);
 void sub(stack_t **stk, unsigned int ln_num);
 void monty_div(stack_t **stk, unsigned int ln_num);
+void free_stack(stack_t *stk);
 
 int is_integer(const char *string);
 
