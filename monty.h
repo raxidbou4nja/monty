@@ -23,6 +23,7 @@ typedef struct instruction_s
 
 void push(stack_t **stack, int n);
 void pall(stack_t **stack);
+void pint(stack_t **stack, unsigned int line_number);
 
 
 int is_integer(const char *str);
