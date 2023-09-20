@@ -9,6 +9,6 @@
 
 void nop(stack_t **stk, unsigned int ln_num)
 {
-	(void)stack;
-	(void)line_number;
+	(void)stk;
+	(void)ln_num;
 }
