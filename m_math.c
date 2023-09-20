@@ -35,3 +35,21 @@ void monty_div(stack_t **stk, unsigned int ln_num)
 
 	free(top1);
 }
+
+/**
+ * mul - multiplies the second top element of the stack with the top element
+ * @stk: Pointer to the top of the stack
+ * @ln_num: Line number of the opcode
+ */
+
+void mul(stack_t **stk, unsigned int ln_num)
+{
+	if (*stk == NULL || (*stk)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", ln_num);
+		exit(EXIT_FAILURE);
+	}
+
+	(*stk)->next->n *= (*stk)->n;
+	pop(stk, ln_num);
+}
